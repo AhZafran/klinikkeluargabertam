@@ -36,7 +36,7 @@ export const siteConfig = {
   },
 
   mapEmbedUrl:
-    "https://www.google.com/maps?q=Bertam,+Melaka&output=embed",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.625294814805!2d102.1725417!3d2.2924043999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d1fb28eccfe3c9%3A0x16edaf6f8254092b!2sKLINIK%20KELUARGA%20(BERTAM%20IMPIAN%2C%20MELAKA)!5e0!3m2!1sen!2smy!4v1779382197228!5m2!1sen!2smy",
 } as const;
 
 export function buildWhatsAppLink(message?: string) {
