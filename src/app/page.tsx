@@ -1,3 +1,4 @@
+import { TopBar } from "@/components/sections/top-bar";
 import { Header } from "@/components/sections/header";
 import { Hero } from "@/components/sections/hero";
 import { About } from "@/components/sections/about";
@@ -13,15 +14,16 @@ import { FloatingWhatsApp } from "@/components/sections/floating-whatsapp";
 export default function Home() {
   return (
     <>
+      <TopBar />
       <Header />
       <main className="flex-1">
         <Hero />
+        <Panel />
         <About />
         <Services />
         <WhyChooseUs />
         <Testimonials />
         <Gallery />
-        <Panel />
         <Contact />
       </main>
       <Footer />

@@ -17,9 +17,9 @@ const footerLinks = [
 export function Footer() {
   return (
     <footer className="bg-[#0a1126] text-white">
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
-          <div>
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+          <div className="sm:col-span-2 lg:col-span-1">
             <Link
               href="#top"
               aria-label={siteConfig.name}
@@ -28,9 +28,9 @@ export function Footer() {
               <Image
                 src={siteConfig.logo}
                 alt={siteConfig.name}
-                width={1607}
-                height={399}
-                className="h-9 w-auto sm:h-10"
+                width={1609}
+                height={432}
+                className="h-10 w-auto sm:h-14"
               />
             </Link>
             <p className="mt-4 max-w-sm text-sm text-white/70">
@@ -124,7 +124,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/60 sm:flex-row">
+        <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-center text-xs text-white/60 sm:mt-12 sm:flex-row sm:text-left">
           <p>
             © {new Date().getFullYear()} {siteConfig.name}. Hak cipta
             terpelihara.

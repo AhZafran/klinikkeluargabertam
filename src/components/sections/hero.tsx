@@ -1,32 +1,7 @@
 import Image from "next/image";
-import {
-  ArrowRight,
-  Baby,
-  Bandage,
-  HeartPulse,
-  Pill,
-  Stethoscope,
-  Syringe,
-} from "lucide-react";
+import { Heart, UserRound } from "lucide-react";
 
-import { WhatsAppIcon } from "@/components/icons/whatsapp";
-import { siteConfig, buildWhatsAppLink } from "@/lib/site-config";
-
-const heroServices = [
-  { icon: Stethoscope, label: "Konsultasi Am" },
-  { icon: Syringe, label: "Vaksinasi" },
-  { icon: Baby, label: "Ibu & Kanak-kanak" },
-  { icon: HeartPulse, label: "Pemeriksaan Kesihatan" },
-  { icon: Bandage, label: "Rawatan Luka" },
-  { icon: Pill, label: "Farmasi Dalaman" },
-];
-
-const heroStats = [
-  { value: "10+", label: "Tahun Pengalaman" },
-  { value: "7", label: "Hari Seminggu" },
-  { value: "8+", label: "Perkhidmatan Utama" },
-  { value: "5★", label: "Maklum Balas Pesakit" },
-];
+import { siteConfig } from "@/lib/site-config";
 
 export function Hero() {
   return (
@@ -60,89 +35,69 @@ export function Hero() {
 
           <p className="mt-4 max-w-xl text-base text-muted-foreground sm:mt-5 sm:text-lg">
             Dari rawatan harian, vaksinasi, kesihatan ibu & kanak-kanak hingga
-            rawatan luka — pasukan kami di {siteConfig.name} sedia membantu anda
+            rawatan luka, pasukan kami di {siteConfig.name} sedia membantu anda
             dan keluarga 7 hari seminggu.
           </p>
-
-          <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center">
-            <a
-              href={buildWhatsAppLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[var(--whatsapp)] px-6 text-base font-medium text-white shadow-md transition-colors hover:bg-[var(--whatsapp)]/90 sm:w-auto"
-            >
-              <WhatsAppIcon className="h-5 w-5" />
-              WhatsApp Klinik
-            </a>
-            <a
-              href="#services"
-              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full border border-primary/30 bg-white px-6 text-base font-medium text-primary transition-colors hover:bg-secondary sm:w-auto"
-            >
-              Lihat Perkhidmatan <ArrowRight className="h-4 w-4" />
-            </a>
-          </div>
-
         </div>
 
-        <div className="relative">
-          <div className="absolute inset-x-6 top-6 h-full rounded-3xl bg-primary/10" />
-          <div className="relative overflow-hidden rounded-3xl border border-border bg-white shadow-xl">
-            <div className="relative aspect-[4/5] w-full bg-gradient-to-br from-secondary via-white to-secondary">
+        <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -inset-2 rounded-[2rem] bg-gradient-to-br from-primary/15 via-secondary to-primary/10 blur-xl"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full bg-primary/15 blur-2xl sm:h-32 sm:w-32"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -bottom-8 -left-6 h-28 w-28 rounded-full bg-primary/15 blur-2xl sm:h-36 sm:w-36"
+          />
+
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/60 bg-gradient-to-br from-secondary via-white to-secondary shadow-xl ring-1 ring-primary/10">
+            <div className="relative aspect-[5/6] w-full">
               <Image
                 src="/HeroSection/doctor.png"
-                alt="Doktor di Klinik Keluarga Bertam"
+                alt="Dr Adelin Zin di Klinik Keluarga Bertam Impian"
                 fill
                 priority
                 sizes="(min-width: 1024px) 40vw, 100vw"
                 className="object-contain object-bottom"
               />
+            </div>
+          </div>
 
-              <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1.5 text-xs font-semibold text-primary shadow-sm ring-1 ring-primary/10 backdrop-blur">
-                <Stethoscope className="h-4 w-4" />
-                Doktor bertugas hari ini
-              </div>
+          <div className="absolute right-2 top-[58%] -translate-y-1/2 inline-flex max-w-[14rem] items-center gap-2.5 rounded-2xl bg-white/95 px-2.5 py-1.5 shadow-lg ring-1 ring-border backdrop-blur sm:-right-4 sm:max-w-[16rem] sm:gap-3 sm:px-3.5 sm:py-2.5">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground sm:h-10 sm:w-10">
+              <UserRound className="h-4 w-4 sm:h-5 sm:w-5" />
+            </span>
+            <div className="min-w-0 pr-1">
+              <p className="text-[11px] font-bold uppercase leading-tight tracking-wide text-foreground">
+                Dr Adelin Zin
+              </p>
+              <p className="text-[10px] leading-tight text-muted-foreground sm:text-[11px]">
+                MD Ukrida · General Practitioner
+              </p>
+            </div>
+          </div>
 
-              <div className="absolute inset-x-4 bottom-4 rounded-2xl bg-white/95 p-4 shadow-lg ring-1 ring-border backdrop-blur">
-                <p className="text-sm font-semibold text-foreground">
-                  Dr Adelin
-                </p>
-                <p className="text-xs text-muted-foreground">
-                  Family Medicine Doctor
-                </p>
-              </div>
+          <div className="absolute left-2 bottom-6 inline-flex max-w-[14rem] items-center gap-2.5 rounded-2xl bg-white/95 px-2.5 py-1.5 shadow-lg ring-1 ring-border backdrop-blur sm:-left-4 sm:bottom-10 sm:max-w-[16rem] sm:gap-3 sm:px-3.5 sm:py-2.5">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--whatsapp)]/90 text-white sm:h-10 sm:w-10">
+              <Heart className="h-4 w-4 fill-current sm:h-5 sm:w-5" />
+            </span>
+            <div className="min-w-0 pr-1">
+              <p className="text-[11px] font-bold uppercase leading-tight tracking-wide text-foreground">
+                Kesihatan Keluarga
+              </p>
+              <p className="text-[10px] leading-tight text-muted-foreground sm:text-[11px]">
+                Penjagaan harian & vaksinasi
+              </p>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 pb-12 pt-8 sm:px-6 sm:pb-20 sm:pt-16 lg:px-8 lg:pb-24">
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6">
-          {heroServices.map(({ icon: Icon, label }) => (
-            <div
-              key={label}
-              className="flex flex-col items-center gap-2 rounded-2xl border border-border bg-white p-3 text-center shadow-sm transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-md sm:gap-3 sm:p-5"
-            >
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary text-primary sm:h-12 sm:w-12">
-                <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
-              </span>
-              <p className="text-xs font-medium text-foreground sm:text-sm">
-                {label}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        <dl className="mt-5 grid grid-cols-2 gap-y-5 rounded-3xl bg-primary px-4 py-6 text-center text-primary-foreground shadow-xl sm:mt-6 sm:grid-cols-4 sm:gap-y-6 sm:px-10 sm:py-8">
-          {heroStats.map(({ value, label }) => (
-            <div key={label}>
-              <dt className="text-2xl font-bold sm:text-4xl">{value}</dt>
-              <dd className="mt-1 text-[11px] text-primary-foreground/80 sm:text-sm">
-                {label}
-              </dd>
-            </div>
-          ))}
-        </dl>
-      </div>
+      <div className="pb-12 sm:pb-20 lg:pb-24" />
     </section>
   );
 }

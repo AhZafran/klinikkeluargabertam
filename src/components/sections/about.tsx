@@ -22,7 +22,7 @@ export function About() {
   return (
     <section id="about" className="bg-background py-14 sm:py-20 lg:py-24">
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:gap-12 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
-        <div className="relative mx-auto mb-20 w-full max-w-md lg:mb-0">
+        <div className="relative mx-auto mb-16 w-full max-w-sm sm:mb-20 sm:max-w-md lg:mb-0">
           <div className="absolute -inset-4 -z-10 rounded-3xl bg-secondary/70" />
           <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-lg">
             <Image
@@ -33,13 +33,13 @@ export function About() {
               className="object-cover"
             />
           </div>
-          <div className="absolute -bottom-12 left-1/2 w-[80%] -translate-x-1/2 rounded-2xl border border-border bg-white p-5 shadow-xl">
+          <div className="absolute -bottom-10 left-1/2 w-[88%] -translate-x-1/2 rounded-2xl border border-border bg-white p-4 shadow-xl sm:-bottom-12 sm:w-[80%] sm:p-5">
             <p className="text-sm font-semibold text-primary">
               &ldquo;Doktor & staf yang sangat caring. Anak saya selesa setiap
               kali datang.&rdquo;
             </p>
             <p className="mt-1 text-xs text-muted-foreground">
-              — Puan Aisyah, pesakit tetap
+              Puan Aisyah, pesakit tetap
             </p>
           </div>
         </div>
@@ -54,7 +54,7 @@ export function About() {
           <p className="mt-4 text-base text-muted-foreground">
             {siteConfig.name} telah berkhidmat kepada komuniti{" "}
             {siteConfig.address.city} dan sekitarnya selama lebih satu dekad.
-            Kami percaya rawatan yang baik bermula dengan hubungan yang baik —
+            Kami percaya rawatan yang baik bermula dengan hubungan yang baik,
             jadi setiap konsultasi diuruskan dengan penuh perhatian, tanpa
             tergesa-gesa.
           </p>

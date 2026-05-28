@@ -1,6 +1,7 @@
 "use client";
 
-import { type RefObject, useRef } from "react";
+import * as React from "react";
+import Image from "next/image";
 import { addCollection, Icon } from "@iconify/react";
 import medicalIcons from "@iconify-json/medical-icon/icons.json";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -9,148 +10,189 @@ import { Card, CardContent } from "@/components/ui/card";
 
 addCollection(medicalIcons);
 
-type Service = {
+type Item = {
+  title: string;
+  subtitle: string;
+  image?: string;
+  imagePosition?: string;
+};
+type Category = {
   icon: string;
   title: string;
   description: string;
+  items: Item[];
 };
 
-const services: Service[] = [
+const categories: Category[] = [
   {
     icon: "medical-icon:i-family-practice",
-    title: "Rawatan Umum",
+    title: "Rawatan Umum & Saringan Kesihatan",
     description:
-      "Demam, batuk, selsema, sakit sendi untuk dewasa dan kanak-kanak.",
-  },
-  {
-    icon: "medical-icon:i-internal-medicine",
-    title: "Penyakit Kronik 3 Serangkai",
-    description:
-      "Pengurusan diabetes, darah tinggi dan kolesterol secara berterusan.",
-  },
-  {
-    icon: "medical-icon:i-laboratory",
-    title: "Pemeriksaan Darah & Medical Check-Up",
-    description:
-      "Ujian darah dan medical check-up di klinik — ada mesin FBC sendiri.",
+      "Rawatan pesakit luar harian, saringan menyeluruh dan ujian makmal di bawah satu bumbung.",
+    items: [
+      {
+        title: "Rawatan Pesakit Luar",
+        subtitle: "Demam, batuk, selsema, sakit tekak & cirit-birit",
+        image: "/rawatanumum/demam.jpg",
+      },
+      {
+        title: "Pemeriksaan Pantas",
+        subtitle: "FBC, ujian air kencing, swab Influenza & Denggi",
+        image: "/rawatanumum/swabtest.webp",
+      },
+      {
+        title: "Pakej Saringan Kesihatan",
+        subtitle: "Bermula RM65 untuk BMI, BP, gula darah",
+        image: "/rawatanumum/bp.avif",
+      },
+      {
+        title: "Ujian Makmal Lanjutan",
+        subtitle: "HbA1c, Vitamin D, fungsi hati & buah pinggang",
+        image: "/rawatanumum/hba1c.jpeg",
+      },
+      {
+        title: "Saringan Jangkitan",
+        subtitle: "STD, HIV, Hepatitis A/B/C, allergy & urine dadah",
+        image: "/rawatanumum/HIVtest.jpeg",
+        imagePosition: "right",
+      },
+    ],
   },
   {
     icon: "medical-icon:i-womens-health",
-    title: "Perancang Keluarga",
-    description: "Pil perancang, Implanon dan IUCD oleh doktor berpengalaman.",
+    title: "Kesihatan Wanita & Ibu Mengandung",
+    description:
+      "Penjagaan menyeluruh dari merancang keluarga hinggalah penyusuan.",
+    items: [
+      {
+        title: "Pemeriksaan Antenatal",
+        subtitle: "Pemeriksaan kehamilan & ujian MGTT",
+        image: "/kesihatanwanita/Pemeriksaankehamilan.jpeg",
+      },
+      {
+        title: "Vaksin Ibu Mengandung",
+        subtitle: "TDaP, Influenza & RSV untuk ibu dan bayi",
+        image: "/kesihatanwanita/vaksinibumengandung.jpeg",
+      },
+      {
+        title: "Perancang Keluarga",
+        subtitle: "Pil, Depo Provera, Implanon & IUCD",
+        image: "/kesihatanwanita/perancangkeluarga.avif",
+      },
+      {
+        title: "Saringan Kanser Serviks",
+        subtitle: "Pap Smear & HPV DNA test",
+        image: "/kesihatanwanita/saringanpapsmear.webp",
+      },
+      {
+        title: "Scan Kehamilan 2D/3D/4D",
+        subtitle: "Untuk memantau perkembangan bayi",
+        image: "/kesihatanwanita/UltrasoundKehamilan.webp",
+      },
+      {
+        title: "Kaunseling Penyusuan",
+        subtitle: "Oleh Lactation Counsellor bertauliah",
+        image: "/kesihatanwanita/kaunselingpenyusuan.jpg",
+      },
+    ],
   },
   {
     icon: "medical-icon:i-pediatrics",
-    title: "Kanak-Kanak & Vaksinasi",
+    title: "Kesihatan Kanak-Kanak & Bayi",
     description:
-      "Pemeriksaan bulanan kanak-kanak dengan vaksin wajib dan tambahan.",
-  },
-  {
-    icon: "medical-icon:i-ultrasound",
-    title: "Ultrasound",
-    description:
-      "Antenatal, breast, buah pinggang, hempedu, rahim dan ovari.",
-  },
-  {
-    icon: "medical-icon:i-cardiology",
-    title: "Pemeriksaan ECG",
-    description:
-      "Pemeriksaan jantung untuk pengesanan awal masalah kardiovaskular.",
-  },
-  {
-    icon: "medical-icon:i-surgery",
-    title: "Rawatan Luka & Minor Surgery",
-    description: "Advanced wound dressing, cuci luka, jahitan dan glustitch.",
-  },
-  {
-    icon: "medical-icon:i-first-aid",
-    title: "Khatan",
-    description:
-      "Khidmat khatan lelaki dan perempuan dalam suasana selamat dan teliti.",
+      "Pemantauan tumbesaran, vaksinasi dan rawatan khas untuk si manja anda.",
+    items: [
+      {
+        title: "Penilaian Tumbesaran",
+        subtitle: "Tinggi, berat, BMI & graf perkembangan",
+        image: "/kesihatankanak2/penilaiantumbesaran.webp",
+      },
+      {
+        title: "Vaksin Jadual Imunisasi",
+        subtitle: "Vaksin bayi mengikut JIK Kementerian Kesihatan",
+        image: "/kesihatankanak2/vaksinkanak2.jpeg",
+      },
+      {
+        title: "Vaksin Tambahan",
+        subtitle: "Influenza, Rotavirus & Chicken Pox",
+        image: "/kesihatankanak2/vaksintambahankanak2.jpg",
+      },
+      {
+        title: "Rawatan Nebulizer",
+        subtitle: "Nebulizer & sedut kahak untuk anak",
+        image: "/kesihatankanak2/nebulizerkanak2.jpg",
+      },
+    ],
   },
   {
     icon: "medical-icon:i-immunizations",
     title: "Vaksinasi Dewasa",
     description:
-      "Imunisasi untuk warga dewasa termasuk influenza, HPV dan hepatitis.",
+      "Perlindungan tambahan untuk warga dewasa dan jemaah Umrah / Haji.",
+    items: [
+      {
+        title: "Vaksin Influenza",
+        subtitle: "Perlindungan tahunan",
+        image: "/vaksinasi/vaksininfluenza.jpg",
+      },
+      {
+        title: "Vaksin Pneumococcal",
+        subtitle: "Pencegahan jangkitan paru-paru",
+        image: "/vaksinasi/VaksinPneumococcal.webp",
+      },
+      {
+        title: "Vaksin Typhoid",
+        subtitle: "Untuk perlindungan demam kepialu",
+        image: "/vaksinasi/VaksinTyphoid.jpeg",
+      },
+      {
+        title: "Vaksin Hepatitis B",
+        subtitle: "Perlindungan jangka panjang",
+        image: "/vaksinasi/VaksinHepatitisB.jpg",
+      },
+      {
+        title: "Vaksin Meningococcal",
+        subtitle: "Untuk jemaah Umrah & Haji",
+        image: "/vaksinasi/VaksinMeningococcal.webp",
+      },
+    ],
   },
   {
-    icon: "medical-icon:i-mental-health",
-    title: "Saringan Kesihatan Mental",
+    icon: "medical-icon:i-surgery",
+    title: "Minor Surgery & Rawatan Luka",
     description:
-      "Saringan awal dan rujukan untuk menjaga kesejahteraan mental anda.",
-  },
-  {
-    icon: "medical-icon:i-nutrition",
-    title: "Rawatan Obesiti",
-    description:
-      "Pengurusan berat badan dan saranan gaya hidup yang lebih sihat.",
-  },
-  {
-    icon: "medical-icon:i-physical-therapy",
-    title: "Rawatan Cagu Kuku",
-    description: "Rawatan ingrown toenail (cagu kuku) dengan kemas dan steril.",
-  },
-  {
-    icon: "medical-icon:i-health-education",
-    title: "Saringan Pelajar & Pekerja",
-    description:
-      "Pakej saringan kesihatan untuk pelajar dan pekerja korporat.",
+      "Prosedur minor di klinik dengan pemantauan doktor dan dressing moden.",
+    items: [
+      {
+        title: "Pembuangan Lipoma",
+        subtitle: "Pembuangan lipoma kecil di klinik",
+        image: "/minorsurgery/PembuanganLipoma.webp",
+      },
+      {
+        title: "Rawatan Bisul",
+        subtitle: "Pembedahan kecil dan dressing",
+        image: "/minorsurgery/RawatanBisul.webp",
+      },
+      {
+        title: "Jahitan Luka",
+        subtitle: "Jahitan & penggunaan skin glue",
+        image: "/minorsurgery/JahitanLuka.avif",
+      },
+      {
+        title: "Cuci Luka Diabetes",
+        subtitle: "Rawatan berkala untuk luka kronik",
+        image: "/minorsurgery/CuciLukaDiabetes.webp",
+      },
+      {
+        title: "Rawatan Luka Terbakar",
+        subtitle: "Advanced dressing untuk penyembuhan cepat",
+        image: "/minorsurgery/RawatanLukaTerbakar.jpeg",
+      },
+    ],
   },
 ];
 
-const firstRow = services.slice(0, 7);
-const secondRow = services.slice(7, 14);
-
-function ServiceRow({
-  items,
-  innerRef,
-}: {
-  items: Service[];
-  innerRef: RefObject<HTMLDivElement | null>;
-}) {
-  return (
-    <div
-      ref={innerRef}
-      className="snap-x snap-mandatory overflow-x-auto pb-3 [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden [scrollbar-width:none]"
-    >
-      <div className="flex gap-5">
-        {items.map(({ icon, title, description }) => (
-          <Card
-            key={title}
-            className="group min-w-0 shrink-0 basis-full snap-start border-border bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-md sm:basis-[calc((100%-1.25rem)/2)] lg:basis-[calc((100%-2.5rem)/3)]"
-          >
-            <CardContent className="p-6">
-              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                <Icon icon={icon} className="h-6 w-6" />
-              </span>
-              <h3 className="mt-5 text-base font-semibold text-foreground">
-                {title}
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground">{description}</p>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 export function Services() {
-  const row1 = useRef<HTMLDivElement>(null);
-  const row2 = useRef<HTMLDivElement>(null);
-
-  const scroll = (dir: 1 | -1) => {
-    const w = window.innerWidth;
-    const visible = w >= 1024 ? 3 : w >= 640 ? 2 : 1;
-    const gap = 20;
-    [row1.current, row2.current].forEach((el) => {
-      if (!el) return;
-      const cardWidth = (el.clientWidth - (visible - 1) * gap) / visible;
-      el.scrollBy({ left: dir * (cardWidth + gap), behavior: "smooth" });
-    });
-  };
-
   return (
     <section id="services" className="bg-secondary/40 py-14 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -162,36 +204,103 @@ export function Services() {
             Penjagaan kesihatan menyeluruh di bawah satu bumbung
           </h2>
           <p className="mt-4 text-base text-muted-foreground">
-            Kami menyediakan rangkaian perkhidmatan klinikal untuk individu dan
-            keluarga — dari rawatan harian sehingga pemeriksaan kesihatan
-            korporat.
+            Rangkaian rawatan klinikal kami dikategorikan mengikut keperluan
+            anda dan keluarga, daripada rawatan harian hinggalah prosedur khas.
           </p>
         </div>
 
-        <div className="relative mt-12">
-          <div className="space-y-5">
-            <ServiceRow items={firstRow} innerRef={row1} />
-            <ServiceRow items={secondRow} innerRef={row2} />
-          </div>
+        <div className="mt-14 space-y-14 sm:mt-16 sm:space-y-16">
+          {categories.map(({ icon, title, description, items }) => (
+            <div key={title}>
+              <div className="mx-auto flex max-w-2xl flex-col items-center text-center">
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-sm">
+                  <Icon icon={icon} className="h-6 w-6" />
+                </span>
+                <h3 className="mt-4 text-xl font-bold text-foreground sm:text-2xl">
+                  {title}
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {description}
+                </p>
+              </div>
 
-          <button
-            type="button"
-            aria-label="Previous"
-            onClick={() => scroll(-1)}
-            className="absolute -left-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-primary shadow-md ring-1 ring-border transition-colors hover:bg-primary hover:text-primary-foreground"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-          <button
-            type="button"
-            aria-label="Next"
-            onClick={() => scroll(1)}
-            className="absolute -right-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-primary shadow-md ring-1 ring-border transition-colors hover:bg-primary hover:text-primary-foreground"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
+              <ItemsCarousel icon={icon} items={items} />
+            </div>
+          ))}
         </div>
       </div>
     </section>
+  );
+}
+
+function ItemsCarousel({ icon, items }: { icon: string; items: Item[] }) {
+  const scrollerRef = React.useRef<HTMLDivElement>(null);
+
+  const scrollByDir = (dir: 1 | -1) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    el.scrollBy({ left: dir * el.clientWidth * 0.85, behavior: "smooth" });
+  };
+
+  return (
+    <div className="relative mt-7 sm:mt-9">
+      <div
+        ref={scrollerRef}
+        className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:snap-none sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-3 xl:grid-cols-4"
+      >
+        {items.map(({ title: itemTitle, subtitle, image, imagePosition }) => (
+          <Card
+            key={itemTitle}
+            className="group shrink-0 basis-[calc(50%-0.5rem)] snap-start overflow-hidden border-border bg-white p-0 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-md sm:shrink sm:basis-auto"
+          >
+            <CardContent className="flex h-full flex-col p-0">
+              {image ? (
+                <div className="relative aspect-[4/3] w-full overflow-hidden">
+                  <Image
+                    src={image}
+                    alt={itemTitle}
+                    fill
+                    sizes="(min-width: 1280px) 280px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    style={{ objectPosition: imagePosition ?? "center" }}
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+              ) : (
+                <div className="flex items-center justify-center bg-gradient-to-br from-secondary via-white to-secondary py-6">
+                  <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-primary shadow-sm ring-1 ring-primary/10 transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                    <Icon icon={icon} className="h-7 w-7" />
+                  </span>
+                </div>
+              )}
+              <div className="flex flex-1 flex-col bg-primary px-4 py-4 text-primary-foreground">
+                <p className="text-base font-semibold leading-snug sm:text-sm">
+                  {itemTitle}
+                </p>
+                <p className="mt-1 text-sm leading-snug text-primary-foreground/80 sm:text-xs">
+                  {subtitle}
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+
+      <button
+        type="button"
+        onClick={() => scrollByDir(-1)}
+        aria-label="Sebelumnya"
+        className="absolute left-1 top-[40%] flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 text-primary shadow-md ring-1 ring-border backdrop-blur transition-colors hover:bg-white active:scale-95 sm:hidden"
+      >
+        <ChevronLeft className="h-5 w-5" />
+      </button>
+      <button
+        type="button"
+        onClick={() => scrollByDir(1)}
+        aria-label="Seterusnya"
+        className="absolute right-1 top-[40%] flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 text-primary shadow-md ring-1 ring-border backdrop-blur transition-colors hover:bg-white active:scale-95 sm:hidden"
+      >
+        <ChevronRight className="h-5 w-5" />
+      </button>
+    </div>
   );
 }

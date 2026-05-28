@@ -50,12 +50,12 @@ export function Gallery() {
             Lihat sekilas suasana klinik kami
           </h2>
           <p className="mt-4 text-base text-muted-foreground">
-            Ruang yang bersih, selesa dan mesra keluarga — direka untuk
+            Ruang yang bersih, selesa dan mesra keluarga, direka untuk
             menenangkan setiap pesakit dari saat anda masuk.
           </p>
         </div>
 
-        <div className="mt-12 grid auto-rows-[180px] grid-cols-2 gap-4 md:auto-rows-[200px] md:grid-cols-4">
+        <div className="mt-10 grid auto-rows-[160px] grid-cols-2 gap-3 sm:mt-12 sm:auto-rows-[180px] sm:gap-4 md:auto-rows-[200px] md:grid-cols-4">
           {items.map(({ title, span, image }) => (
             <div
               key={title}
