@@ -1,8 +1,6 @@
 import Image from "next/image";
 import { Heart, UserRound } from "lucide-react";
 
-import { siteConfig } from "@/lib/site-config";
-
 export function Hero() {
   return (
     <section
@@ -29,14 +27,13 @@ export function Hero() {
       <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 pt-10 sm:gap-12 sm:px-6 sm:pt-16 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:pt-28">
         <div>
           <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Penjagaan kesihatan keluarga yang{" "}
-            <span className="text-primary">mesra & dipercayai</span>
+            Rawatan Berkualiti{" "}
+            <span className="text-primary">Perkhidmatan Lebih Mesra</span>
           </h1>
 
           <p className="mt-4 max-w-xl text-base text-muted-foreground sm:mt-5 sm:text-lg">
-            Dari rawatan harian, vaksinasi, kesihatan ibu & kanak-kanak hingga
-            rawatan luka, pasukan kami di {siteConfig.name} sedia membantu anda
-            dan keluarga 7 hari seminggu.
+            Kami menyediakan rawatan untuk seisi keluarga anda dengan layanan
+            yang mesra dan penjagaan yang menyeluruh setiap hari.
           </p>
         </div>
 
@@ -90,7 +87,7 @@ export function Hero() {
                 Kesihatan Keluarga
               </p>
               <p className="text-[10px] leading-tight text-muted-foreground sm:text-[11px]">
-                Penjagaan harian & vaksinasi
+                Rawatan Harian & Susulan
               </p>
             </div>
           </div>

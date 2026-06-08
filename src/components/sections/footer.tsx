@@ -87,10 +87,16 @@ export function Footer() {
           <div>
             <p className="text-sm font-semibold text-white">Waktu operasi</p>
             <ul className="mt-4 space-y-2 text-sm text-white/70">
-              {siteConfig.hours.map((h) => (
-                <li key={h.day}>
-                  <span className="block text-white">{h.day}</span>
-                  <span>{h.time}</span>
+              {siteConfig.hours.map((h, i) => (
+                <li key={h.label || `hours-${i}`}>
+                  {h.label && (
+                    <span className="block text-white">{h.label}</span>
+                  )}
+                  {h.lines.map((line) => (
+                    <span key={line} className="block">
+                      {line}
+                    </span>
+                  ))}
                 </li>
               ))}
             </ul>

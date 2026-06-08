@@ -6,15 +6,15 @@ import { siteConfig } from "@/lib/site-config";
 const pillars = [
   {
     icon: ShieldCheck,
-    title: "Berlesen & dipercayai",
+    title: "Doktor berdaftar & bertauliah",
     description:
-      "Berdaftar dengan KKM (Kementerian Kesihatan Malaysia) & MMC. Standard klinikal yang konsisten.",
+      "Kami pastikan doktor kami berdaftar dengan KKM dan MMC serta mengamalkan standard rawatan berasaskan bukti perubatan.",
   },
   {
     icon: Users,
-    title: "Pasukan mesra",
+    title: "Pasukan Berpengalaman",
     description:
-      "Doktor dan jururawat berpengalaman yang mengambil masa untuk benar-benar mendengar.",
+      "Kami membantu anda memahami masalah kesihatan dan pilihan rawatan yang pelbagai.",
   },
 ];
 
@@ -49,19 +49,23 @@ export function About() {
             Mengenai Kami
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Doktor keluarga di {siteConfig.address.city}, untuk keluarga anda
+            Penjagaan kesihatan yang dekat di hati komuniti Bertam Impian
           </h2>
           <p className="mt-4 text-base text-muted-foreground">
-            {siteConfig.name} telah berkhidmat kepada komuniti{" "}
-            {siteConfig.address.city} dan sekitarnya selama lebih satu dekad.
-            Kami percaya rawatan yang baik bermula dengan hubungan yang baik,
-            jadi setiap konsultasi diuruskan dengan penuh perhatian, tanpa
-            tergesa-gesa.
+            Klinik Keluarga Bertam Impian komited dalam membantu komuniti
+            setempat mendapatkan rawatan yang mudah diakses, mesra dan
+            berkualiti.
           </p>
           <p className="mt-3 text-base text-muted-foreground">
-            Kemudahan klinik kami merangkumi bilik konsultasi, bilik rawatan,
-            farmasi dalaman, ujian darah ringkas, ECG, dan rawatan luka. Kami
-            juga menerima panel insurans dan korporat utama.
+            Kami percaya setiap pesakit berhak mendapat penerangan yang jelas,
+            masa yang mencukupi untuk bertanya, dan rawatan yang sesuai dengan
+            keperluan mereka.
+          </p>
+          <p className="mt-3 text-base text-muted-foreground">
+            Dengan kemudahan seperti ujian darah ringkas dan cepat, servis
+            ultrasound, saringan jantung (ECG) serta rawatan awal kecemasan,
+            kami berusaha menyediakan keperluan penjagaan kesihatan keluarga di
+            bawah satu bumbung.
           </p>
 
           <ul className="mt-8 grid gap-4 sm:grid-cols-2">

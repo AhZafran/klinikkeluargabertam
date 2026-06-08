@@ -1,8 +1,8 @@
 const reasons = [
   {
-    title: "Dr dan staff berpengalaman",
+    title: "Doktor dan Staf Yang Komited",
     description:
-      "Pasukan profesional dengan pengalaman luas dalam perubatan keluarga.",
+      "Setiap pesakit akan diberi perhatian dan penjagaan yang terbaik.",
   },
   {
     title: "Klinik bersih dan selesa",
@@ -10,19 +10,19 @@ const reasons = [
       "Persekitaran yang sentiasa bersih dan selesa untuk anda dan keluarga.",
   },
   {
-    title: "Masa menunggu yang sekejap",
+    title: "Menghargai Masa Anda",
     description:
-      "Sistem giliran cekap supaya anda tidak perlu menunggu terlalu lama.",
+      "Kami berusaha menguruskan masa menunggu dengan baik supaya anda mendapat rawatan yang berkualiti tanpa perlu menunggu lama.",
   },
   {
-    title: "Parking banyak & mudah",
+    title: "Tempat Letak Kereta Yang Luas",
     description:
-      "Ruang parking yang luas dan dekat dengan pintu masuk klinik.",
+      "Kemudahan letak kereta yang mencukupi untuk keselesaan pesakit dan keluarga.",
   },
   {
-    title: "Lebih dari 5 panel klinik",
+    title: "Pelbagai Rangkaian Panel",
     description:
-      "Menerima pelbagai panel insurans dan korporat untuk kemudahan anda.",
+      "Kami bekerjasama dengan pelbagai syarikat panel untuk memudahkan akses rawatan anda.",
   },
   {
     title: "Harga berpatutan",

@@ -28,70 +28,64 @@ const categories: Category[] = [
     icon: "medical-icon:i-family-practice",
     title: "Rawatan Umum & Saringan Kesihatan",
     description:
-      "Rawatan pesakit luar harian, saringan menyeluruh dan ujian makmal di bawah satu bumbung.",
+      "Rawatan harian, ujian diagnostik dan saringan kesihatan untuk membantu anda menjaga kesihatan dengan lebih baik.",
     items: [
       {
         title: "Rawatan Pesakit Luar",
-        subtitle: "Demam, batuk, selsema, sakit tekak & cirit-birit",
+        subtitle: "Pemeriksaan dan rawatan untuk masalah kesihatan harian untuk seisi keluarga.",
         image: "/rawatanumum/demam.jpg",
       },
       {
-        title: "Pemeriksaan Pantas",
-        subtitle: "FBC, ujian air kencing, swab Influenza & Denggi",
+        title: "Ujian Pantas Di Klinik",
+        subtitle: "Ujian darah FBC, Swab Test dan Urine Test tersedia bagi membantu doktor membuat penilaian dan rawatan dengan segera.",
         image: "/rawatanumum/swabtest.webp",
       },
       {
         title: "Pakej Saringan Kesihatan",
-        subtitle: "Bermula RM65 untuk BMI, BP, gula darah",
+        subtitle: "Pemeriksaan kesihatan berkala untuk pengesanan awal, mengenalpasti faktor risiko dan pemantauan tahap kesihatan anda.",
         image: "/rawatanumum/bp.avif",
       },
       {
-        title: "Ujian Makmal Lanjutan",
-        subtitle: "HbA1c, Vitamin D, fungsi hati & buah pinggang",
+        title: "Ujian Makmal Komprehensif",
+        subtitle: "Pelbagai ujian darah dan makmal lanjutan yang diintegrasi terus ke sistem klinik kami.",
         image: "/rawatanumum/hba1c.jpeg",
-      },
-      {
-        title: "Saringan Jangkitan",
-        subtitle: "STD, HIV, Hepatitis A/B/C, allergy & urine dadah",
-        image: "/rawatanumum/HIVtest.jpeg",
-        imagePosition: "right",
       },
     ],
   },
   {
     icon: "medical-icon:i-womens-health",
-    title: "Kesihatan Wanita & Ibu Mengandung",
+    title: "Kesihatan Wanita dan Sokongan Ibu Hamil",
     description:
-      "Penjagaan menyeluruh dari merancang keluarga hinggalah penyusuan.",
+      "Menyokong kesihatan wanita di setiap fasa kehidupan — daripada perancangan keluarga, kehamilan sehingga penyusuan susu ibu.",
     items: [
       {
         title: "Pemeriksaan Antenatal",
-        subtitle: "Pemeriksaan kehamilan & ujian MGTT",
+        subtitle: "Memantau kesihatan ibu dan perkembangan bayi sepanjang kehamilan.",
         image: "/kesihatanwanita/Pemeriksaankehamilan.jpeg",
       },
       {
-        title: "Vaksin Ibu Mengandung",
-        subtitle: "TDaP, Influenza & RSV untuk ibu dan bayi",
+        title: "Vaksinasi Ibu Mengandung",
+        subtitle: "Perlindungan penting seperti TDaP, Influenza dan RSV untuk kesihatan ibu dan bayi sejak dalam kandungan.",
         image: "/kesihatanwanita/vaksinibumengandung.jpeg",
       },
       {
-        title: "Perancang Keluarga",
-        subtitle: "Pil, Depo Provera, Implanon & IUCD",
-        image: "/kesihatanwanita/perancangkeluarga.avif",
-      },
-      {
-        title: "Saringan Kanser Serviks",
-        subtitle: "Pap Smear & HPV DNA test",
-        image: "/kesihatanwanita/saringanpapsmear.webp",
-      },
-      {
-        title: "Scan Kehamilan 2D/3D/4D",
-        subtitle: "Untuk memantau perkembangan bayi",
+        title: "Ultrasound Kehamilan",
+        subtitle: "Melihat perkembangan dan kesejahteraan bayi sepanjang kehamilan melalui imbasan 2D/3D/4D/5D.",
         image: "/kesihatanwanita/UltrasoundKehamilan.webp",
       },
       {
+        title: "Perancang Keluarga",
+        subtitle: "Bantu merancang kehamilan dengan lebih yakin dan teratur melalui pelbagai kaedah perancang yang tersedia.",
+        image: "/kesihatanwanita/perancangkeluarga.avif",
+      },
+      {
+        title: "Saringan Kanser Pangkal Rahim",
+        subtitle: "Pengesanan awal untuk melindungi kesihatan pangkal rahim anda.",
+        image: "/kesihatanwanita/saringanpapsmear.webp",
+      },
+      {
         title: "Kaunseling Penyusuan",
-        subtitle: "Oleh Lactation Counsellor bertauliah",
+        subtitle: "Sokongan profesional oleh Kaunselor Laktasi untuk mengatasi cabaran penyusuan susu ibu.",
         image: "/kesihatanwanita/kaunselingpenyusuan.jpg",
       },
     ],
@@ -103,23 +97,23 @@ const categories: Category[] = [
       "Pemantauan tumbesaran, vaksinasi dan rawatan khas untuk si manja anda.",
     items: [
       {
-        title: "Penilaian Tumbesaran",
-        subtitle: "Tinggi, berat, BMI & graf perkembangan",
+        title: "Pemantauan Tumbesaran",
+        subtitle: "Memastikan perkembangan si manja mengikut tahap usia yang sihat.",
         image: "/kesihatankanak2/penilaiantumbesaran.webp",
       },
       {
-        title: "Vaksin Jadual Imunisasi",
-        subtitle: "Vaksin bayi mengikut JIK Kementerian Kesihatan",
+        title: "Suntikan Vaksinasi Wajib",
+        subtitle: "Perlindungan penting mengikut Jadual Imunisasi Kebangsaan.",
         image: "/kesihatankanak2/vaksinkanak2.jpeg",
       },
       {
-        title: "Vaksin Tambahan",
-        subtitle: "Influenza, Rotavirus & Chicken Pox",
+        title: "Suntikan Vaksinasi Tambahan",
+        subtitle: "Vaksin Influenza, Rotavirus dan Chicken Pox untuk perlindungan yang lebih menyeluruh.",
         image: "/kesihatankanak2/vaksintambahankanak2.jpg",
       },
       {
         title: "Rawatan Nebulizer",
-        subtitle: "Nebulizer & sedut kahak untuk anak",
+        subtitle: "Membantu anak bernafas dengan lebih selesa dan memberikan kelegaan untuk si manja.",
         image: "/kesihatankanak2/nebulizerkanak2.jpg",
       },
     ],
@@ -128,31 +122,31 @@ const categories: Category[] = [
     icon: "medical-icon:i-immunizations",
     title: "Vaksinasi Dewasa",
     description:
-      "Perlindungan tambahan untuk warga dewasa dan jemaah Umrah / Haji.",
+      "Kurangkan risiko jangkitan dan komplikasi penyakit melalui vaksinasi yang sesuai dengan keperluan anda.",
     items: [
       {
         title: "Vaksin Influenza",
-        subtitle: "Perlindungan tahunan",
+        subtitle: "Perlindungan terhadap selsema bermusim dan komplikasinya.",
         image: "/vaksinasi/vaksininfluenza.jpg",
       },
       {
         title: "Vaksin Pneumococcal",
-        subtitle: "Pencegahan jangkitan paru-paru",
+        subtitle: "Perlindungan daripada jangkitan paru-paru dan penyakit serius berkaitan.",
         image: "/vaksinasi/VaksinPneumococcal.webp",
       },
       {
         title: "Vaksin Typhoid",
-        subtitle: "Untuk perlindungan demam kepialu",
+        subtitle: "Perlindungan daripada demam kepialu untuk individu dan pengendali makanan.",
         image: "/vaksinasi/VaksinTyphoid.jpeg",
       },
       {
         title: "Vaksin Hepatitis B",
-        subtitle: "Perlindungan jangka panjang",
+        subtitle: "Perlindungan jangka panjang terhadap jangkitan Hepatitis B.",
         image: "/vaksinasi/VaksinHepatitisB.jpg",
       },
       {
         title: "Vaksin Meningococcal",
-        subtitle: "Untuk jemaah Umrah & Haji",
+        subtitle: "Disyorkan untuk jemaah umrah, haji dan individu berisiko.",
         image: "/vaksinasi/VaksinMeningococcal.webp",
       },
     ],
@@ -161,32 +155,32 @@ const categories: Category[] = [
     icon: "medical-icon:i-surgery",
     title: "Minor Surgery & Rawatan Luka",
     description:
-      "Prosedur minor di klinik dengan pemantauan doktor dan dressing moden.",
+      "Daripada luka harian hingga penjagaan luka kronik, kami membantu proses penyembuhan dengan pemantauan yang berterusan.",
     items: [
       {
         title: "Pembuangan Lipoma",
-        subtitle: "Pembuangan lipoma kecil di klinik",
+        subtitle: "Prosedur kecil untuk membuang lipoma yang mengganggu keselesaan anda.",
         image: "/minorsurgery/PembuanganLipoma.webp",
       },
       {
+        title: "Rawatan Luka Terbakar",
+        subtitle: "Dressing moden untuk membantu proses penyembuhan luka terbakar.",
+        image: "/minorsurgery/RawatanLukaTerbakar.jpeg",
+      },
+      {
         title: "Rawatan Bisul",
-        subtitle: "Pembedahan kecil dan dressing",
+        subtitle: "Rawatan bisul dengan prosedur yang sesuai untuk membantu penyembuhan.",
         image: "/minorsurgery/RawatanBisul.webp",
       },
       {
         title: "Jahitan Luka",
-        subtitle: "Jahitan & penggunaan skin glue",
+        subtitle: "Rawatan luka dengan jahitan atau glu mengikut kesesuaian.",
         image: "/minorsurgery/JahitanLuka.avif",
       },
       {
-        title: "Cuci Luka Diabetes",
-        subtitle: "Rawatan berkala untuk luka kronik",
+        title: "Rawatan Luka Kronik",
+        subtitle: "Penjagaan luka diabetes untuk membantu penyembuhan dan mencegah komplikasi.",
         image: "/minorsurgery/CuciLukaDiabetes.webp",
-      },
-      {
-        title: "Rawatan Luka Terbakar",
-        subtitle: "Advanced dressing untuk penyembuhan cepat",
-        image: "/minorsurgery/RawatanLukaTerbakar.jpeg",
       },
     ],
   },

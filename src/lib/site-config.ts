@@ -23,8 +23,17 @@ export const siteConfig = {
   hoursSummary: "Isnin hingga Ahad: 8:00 pagi hingga 11:30 malam",
 
   hours: [
-    { day: "Isnin hingga Ahad", time: "8:00 pagi hingga 11:30 malam" },
-    { day: "Cuti Umum", time: "Buka seperti biasa" },
+    {
+      label: "Buka Setiap Hari",
+      lines: ["Isnin hingga Ahad", "8:00 pagi hingga 11:30 malam"],
+    },
+    {
+      label: "",
+      lines: [
+        "Cuti Umum: Waktu operasi mungkin berbeza.",
+        "Sila hubungi klinik atau semak Google kami untuk maklumat terkini.",
+      ],
+    },
   ],
 
   socials: {

@@ -47,7 +47,9 @@ export function Contact() {
               <InfoRow
                 icon={Clock}
                 title="Waktu Operasi"
-                lines={siteConfig.hours.map((h) => `${h.day}: ${h.time}`)}
+                lines={siteConfig.hours.flatMap((h) =>
+                  h.label ? [h.label, ...h.lines] : h.lines,
+                )}
               />
             </ul>
 
