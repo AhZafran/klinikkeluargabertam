@@ -8,7 +8,7 @@ export const siteConfig = {
   logo: "/logo/logo.png",
 
   phone: "06-274 2286",
-  whatsappLink: "https://wa.link/dhh27n",
+  whatsappLink: "https://wa.link/npqbc5",
   email: "medicarebertam@gmail.com",
 
   address: {
