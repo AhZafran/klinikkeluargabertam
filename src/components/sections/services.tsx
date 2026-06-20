@@ -56,7 +56,7 @@ const categories: Category[] = [
     icon: "medical-icon:i-womens-health",
     title: "Kesihatan Wanita dan Sokongan Ibu Hamil",
     description:
-      "Menyokong kesihatan wanita di setiap fasa kehidupan — daripada perancangan keluarga, kehamilan sehingga penyusuan susu ibu.",
+      "Menyokong kesihatan wanita di setiap fasa kehidupan — daripada kehamilan sehingga penyusuan susu ibu.",
     items: [
       {
         title: "Pemeriksaan Antenatal",
@@ -72,11 +72,6 @@ const categories: Category[] = [
         title: "Ultrasound Kehamilan",
         subtitle: "Melihat perkembangan dan kesejahteraan bayi sepanjang kehamilan melalui imbasan 2D/3D/4D/5D.",
         image: "/kesihatanwanita/UltrasoundKehamilan.webp",
-      },
-      {
-        title: "Perancang Keluarga",
-        subtitle: "Bantu merancang kehamilan dengan lebih yakin dan teratur melalui pelbagai kaedah perancang yang tersedia.",
-        image: "/kesihatanwanita/perancangkeluarga.avif",
       },
       {
         title: "Saringan Kanser Pangkal Rahim",
