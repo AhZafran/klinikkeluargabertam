@@ -53,39 +53,6 @@ const categories: Category[] = [
     ],
   },
   {
-    icon: "medical-icon:i-womens-health",
-    title: "Kesihatan Wanita dan Sokongan Ibu Hamil",
-    description:
-      "Menyokong kesihatan wanita di setiap fasa kehidupan — daripada kehamilan sehingga penyusuan susu ibu.",
-    items: [
-      {
-        title: "Pemeriksaan Antenatal",
-        subtitle: "Memantau kesihatan ibu dan perkembangan bayi sepanjang kehamilan.",
-        image: "/kesihatanwanita/Pemeriksaankehamilan.jpeg",
-      },
-      {
-        title: "Vaksinasi Ibu Mengandung",
-        subtitle: "Perlindungan penting seperti TDaP, Influenza dan RSV untuk kesihatan ibu dan bayi sejak dalam kandungan.",
-        image: "/kesihatanwanita/vaksinibumengandung.jpeg",
-      },
-      {
-        title: "Ultrasound Kehamilan",
-        subtitle: "Melihat perkembangan dan kesejahteraan bayi sepanjang kehamilan melalui imbasan 2D/3D/4D/5D.",
-        image: "/kesihatanwanita/UltrasoundKehamilan.webp",
-      },
-      {
-        title: "Saringan Kanser Pangkal Rahim",
-        subtitle: "Pengesanan awal untuk melindungi kesihatan pangkal rahim anda.",
-        image: "/kesihatanwanita/saringanpapsmear.webp",
-      },
-      {
-        title: "Kaunseling Penyusuan",
-        subtitle: "Sokongan profesional oleh Kaunselor Laktasi untuk mengatasi cabaran penyusuan susu ibu.",
-        image: "/kesihatanwanita/kaunselingpenyusuan.jpg",
-      },
-    ],
-  },
-  {
     icon: "medical-icon:i-pediatrics",
     title: "Kesihatan Kanak-Kanak & Bayi",
     description:
