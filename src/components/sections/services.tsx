@@ -53,34 +53,6 @@ const categories: Category[] = [
     ],
   },
   {
-    icon: "medical-icon:i-womens-health",
-    title: "Penjagaan Ibu Hamil & Kesihatan Keluarga",
-    description:
-      "Sokongan menyeluruh untuk ibu sepanjang kehamilan sehingga selepas bersalin — daripada pembukaan Buku Pink sehingga penyusuan susu ibu.",
-    items: [
-      {
-        title: "Buka Buku Pink & Pemeriksaan Antenatal",
-        subtitle: "Pembukaan dan susulan Buku Pink serta pemantauan kesihatan ibu dan perkembangan bayi sepanjang kehamilan.",
-        image: "/kesihatanwanita/Pemeriksaankehamilan.jpeg",
-      },
-      {
-        title: "Vaksinasi Ibu Mengandung",
-        subtitle: "Perlindungan penting seperti TDaP, Influenza dan RSV untuk kesihatan ibu dan bayi sejak dalam kandungan.",
-        image: "/kesihatanwanita/vaksinibumengandung.jpeg",
-      },
-      {
-        title: "Ultrasound Kehamilan",
-        subtitle: "Imbasan dating serta trimester pertama, kedua dan ketiga untuk memantau kesejahteraan bayi melalui imbasan 2D/3D/4D/5D.",
-        image: "/kesihatanwanita/UltrasoundKehamilan.webp",
-      },
-      {
-        title: "Kaunseling Penyusuan",
-        subtitle: "Sokongan profesional oleh Kaunselor Laktasi untuk mengatasi cabaran penyusuan susu ibu.",
-        image: "/kesihatanwanita/kaunselingpenyusuan.jpg",
-      },
-    ],
-  },
-  {
     icon: "medical-icon:i-pediatrics",
     title: "Kesihatan Kanak-Kanak & Bayi",
     description:
