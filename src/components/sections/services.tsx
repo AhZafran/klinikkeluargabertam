@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
 import { addCollection, Icon } from "@iconify/react";
 import medicalIcons from "@iconify-json/medical-icon/icons.json";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -13,8 +12,7 @@ addCollection(medicalIcons);
 type Item = {
   title: string;
   subtitle: string;
-  image?: string;
-  imagePosition?: string;
+  icon?: string;
 };
 type Category = {
   icon: string;
@@ -33,22 +31,22 @@ const categories: Category[] = [
       {
         title: "Rawatan Pesakit Luar",
         subtitle: "Pemeriksaan dan rawatan untuk masalah kesihatan harian untuk seisi keluarga.",
-        image: "/rawatanumum/demam.jpg",
+        icon: "medical-icon:i-outpatient",
       },
       {
         title: "Ujian Pantas Di Klinik",
         subtitle: "Ujian darah FBC, Swab Test dan Urine Test tersedia bagi membantu doktor membuat penilaian dan rawatan dengan segera.",
-        image: "/rawatanumum/swabtest.webp",
+        icon: "medical-icon:i-laboratory",
       },
       {
         title: "Pakej Saringan Kesihatan",
         subtitle: "Pemeriksaan kesihatan berkala untuk pengesanan awal, mengenalpasti faktor risiko dan pemantauan tahap kesihatan anda.",
-        image: "/rawatanumum/bp.avif",
+        icon: "medical-icon:i-health-services",
       },
       {
         title: "Ujian Makmal Komprehensif",
         subtitle: "Pelbagai ujian darah dan makmal lanjutan yang diintegrasi terus ke sistem klinik kami.",
-        image: "/rawatanumum/hba1c.jpeg",
+        icon: "medical-icon:i-pathology",
       },
     ],
   },
@@ -61,22 +59,22 @@ const categories: Category[] = [
       {
         title: "Pemantauan Tumbesaran",
         subtitle: "Memastikan perkembangan si manja mengikut tahap usia yang sihat.",
-        image: "/kesihatankanak2/penilaiantumbesaran.webp",
+        icon: "medical-icon:i-pediatrics",
       },
       {
         title: "Suntikan Vaksinasi Wajib",
         subtitle: "Perlindungan penting mengikut Jadual Imunisasi Kebangsaan.",
-        image: "/kesihatankanak2/vaksinkanak2.jpeg",
+        icon: "medical-icon:i-immunizations",
       },
       {
         title: "Suntikan Vaksinasi Tambahan",
         subtitle: "Vaksin Influenza, Rotavirus dan Chicken Pox untuk perlindungan yang lebih menyeluruh.",
-        image: "/kesihatankanak2/vaksintambahankanak2.jpg",
+        icon: "medical-icon:i-infectious-diseases",
       },
       {
         title: "Rawatan Nebulizer",
         subtitle: "Membantu anak bernafas dengan lebih selesa dan memberikan kelegaan untuk si manja.",
-        image: "/kesihatankanak2/nebulizerkanak2.jpg",
+        icon: "medical-icon:i-respiratory",
       },
     ],
   },
@@ -89,27 +87,27 @@ const categories: Category[] = [
       {
         title: "Vaksin Influenza",
         subtitle: "Perlindungan terhadap selsema bermusim dan komplikasinya.",
-        image: "/vaksinasi/vaksininfluenza.jpg",
+        icon: "medical-icon:i-immunizations",
       },
       {
         title: "Vaksin Pneumococcal",
         subtitle: "Perlindungan daripada jangkitan paru-paru dan penyakit serius berkaitan.",
-        image: "/vaksinasi/VaksinPneumococcal.webp",
+        icon: "medical-icon:i-respiratory",
       },
       {
         title: "Vaksin Typhoid",
         subtitle: "Perlindungan daripada demam kepialu untuk individu dan pengendali makanan.",
-        image: "/vaksinasi/VaksinTyphoid.jpeg",
+        icon: "medical-icon:i-infectious-diseases",
       },
       {
         title: "Vaksin Hepatitis B",
         subtitle: "Perlindungan jangka panjang terhadap jangkitan Hepatitis B.",
-        image: "/vaksinasi/VaksinHepatitisB.jpg",
+        icon: "medical-icon:i-internal-medicine",
       },
       {
         title: "Vaksin Meningococcal",
         subtitle: "Disyorkan untuk jemaah umrah, haji dan individu berisiko.",
-        image: "/vaksinasi/VaksinMeningococcal.webp",
+        icon: "medical-icon:i-neurology",
       },
     ],
   },
@@ -122,27 +120,27 @@ const categories: Category[] = [
       {
         title: "Pembuangan Lipoma",
         subtitle: "Prosedur kecil untuk membuang lipoma yang mengganggu keselesaan anda.",
-        image: "/minorsurgery/PembuanganLipoma.webp",
+        icon: "medical-icon:i-surgery",
       },
       {
         title: "Rawatan Luka Terbakar",
         subtitle: "Dressing moden untuk membantu proses penyembuhan luka terbakar.",
-        image: "/minorsurgery/RawatanLukaTerbakar.jpeg",
+        icon: "medical-icon:i-emergency",
       },
       {
         title: "Rawatan Bisul",
         subtitle: "Rawatan bisul dengan prosedur yang sesuai untuk membantu penyembuhan.",
-        image: "/minorsurgery/RawatanBisul.webp",
+        icon: "medical-icon:i-dermatology",
       },
       {
         title: "Jahitan Luka",
         subtitle: "Rawatan luka dengan jahitan atau glu mengikut kesesuaian.",
-        image: "/minorsurgery/JahitanLuka.avif",
+        icon: "medical-icon:i-first-aid",
       },
       {
         title: "Rawatan Luka Kronik",
         subtitle: "Penjagaan luka diabetes untuk membantu penyembuhan dan mencegah komplikasi.",
-        image: "/minorsurgery/CuciLukaDiabetes.webp",
+        icon: "medical-icon:i-diabetes-education",
       },
     ],
   },
@@ -204,30 +202,17 @@ function ItemsCarousel({ icon, items }: { icon: string; items: Item[] }) {
         ref={scrollerRef}
         className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:snap-none sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-3 xl:grid-cols-4"
       >
-        {items.map(({ title: itemTitle, subtitle, image, imagePosition }) => (
+        {items.map(({ title: itemTitle, subtitle, icon: itemIcon }) => (
           <Card
             key={itemTitle}
             className="group shrink-0 basis-[calc(50%-0.5rem)] snap-start overflow-hidden border-border bg-white p-0 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-md sm:shrink sm:basis-auto"
           >
             <CardContent className="flex h-full flex-col p-0">
-              {image ? (
-                <div className="relative aspect-[4/3] w-full overflow-hidden">
-                  <Image
-                    src={image}
-                    alt={itemTitle}
-                    fill
-                    sizes="(min-width: 1280px) 280px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                    style={{ objectPosition: imagePosition ?? "center" }}
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-              ) : (
-                <div className="flex items-center justify-center bg-gradient-to-br from-secondary via-white to-secondary py-6">
-                  <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-primary shadow-sm ring-1 ring-primary/10 transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Icon icon={icon} className="h-7 w-7" />
-                  </span>
-                </div>
-              )}
+              <div className="flex items-center justify-center bg-gradient-to-br from-secondary via-white to-secondary py-8">
+                <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-primary shadow-sm ring-1 ring-primary/10 transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                  <Icon icon={itemIcon ?? icon} className="h-8 w-8" />
+                </span>
+              </div>
               <div className="flex flex-1 flex-col bg-primary px-4 py-4 text-primary-foreground">
                 <p className="text-base font-semibold leading-snug sm:text-sm">
                   {itemTitle}
