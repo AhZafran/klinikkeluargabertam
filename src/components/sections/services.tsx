@@ -1,149 +1,87 @@
 "use client";
 
-import * as React from "react";
 import { addCollection, Icon } from "@iconify/react";
 import medicalIcons from "@iconify-json/medical-icon/icons.json";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { Card, CardContent } from "@/components/ui/card";
 
 addCollection(medicalIcons);
 
-type Item = {
-  title: string;
-  subtitle: string;
-  icon?: string;
-};
-type Category = {
+type Expertise = {
   icon: string;
   title: string;
   description: string;
-  items: Item[];
+};
+type OtherService = {
+  icon: string;
+  title: string;
 };
 
-const categories: Category[] = [
+const expertise: Expertise[] = [
   {
-    icon: "medical-icon:i-family-practice",
-    title: "Rawatan Umum & Saringan Kesihatan",
+    icon: "medical-icon:i-ultrasound",
+    title: "Pemeriksaan Ultrasound Antenatal",
     description:
-      "Rawatan harian, ujian diagnostik dan saringan kesihatan untuk membantu anda menjaga kesihatan dengan lebih baik.",
-    items: [
-      {
-        title: "Rawatan Pesakit Luar",
-        subtitle: "Pemeriksaan dan rawatan untuk masalah kesihatan harian untuk seisi keluarga.",
-        icon: "medical-icon:i-outpatient",
-      },
-      {
-        title: "Ujian Pantas Di Klinik",
-        subtitle: "Ujian darah FBC, Swab Test dan Urine Test tersedia bagi membantu doktor membuat penilaian dan rawatan dengan segera.",
-        icon: "medical-icon:i-laboratory",
-      },
-      {
-        title: "Pakej Saringan Kesihatan",
-        subtitle: "Pemeriksaan kesihatan berkala untuk pengesanan awal, mengenalpasti faktor risiko dan pemantauan tahap kesihatan anda.",
-        icon: "medical-icon:i-health-services",
-      },
-      {
-        title: "Ujian Makmal Komprehensif",
-        subtitle: "Pelbagai ujian darah dan makmal lanjutan yang diintegrasi terus ke sistem klinik kami.",
-        icon: "medical-icon:i-pathology",
-      },
-    ],
+      "Pemeriksaan ultrasound komprehensif untuk memantau kesihatan ibu dan bayi sepanjang kehamilan.",
   },
   {
-    icon: "medical-icon:i-pediatrics",
-    title: "Kesihatan Kanak-Kanak & Bayi",
+    icon: "medical-icon:i-womens-health",
+    title: "Kesihatan Wanita",
     description:
-      "Pemantauan tumbesaran, vaksinasi dan rawatan khas untuk si manja anda.",
-    items: [
-      {
-        title: "Pemantauan Tumbesaran",
-        subtitle: "Memastikan perkembangan si manja mengikut tahap usia yang sihat.",
-        icon: "medical-icon:i-pediatrics",
-      },
-      {
-        title: "Suntikan Vaksinasi Wajib",
-        subtitle: "Perlindungan penting mengikut Jadual Imunisasi Kebangsaan.",
-        icon: "medical-icon:i-immunizations",
-      },
-      {
-        title: "Suntikan Vaksinasi Tambahan",
-        subtitle: "Vaksin Influenza, Rotavirus dan Chicken Pox untuk perlindungan yang lebih menyeluruh.",
-        icon: "medical-icon:i-infectious-diseases",
-      },
-      {
-        title: "Rawatan Nebulizer",
-        subtitle: "Membantu anak bernafas dengan lebih selesa dan memberikan kelegaan untuk si manja.",
-        icon: "medical-icon:i-respiratory",
-      },
-    ],
+      "Perkhidmatan kesihatan yang menyeluruh untuk wanita di semua peringkat kehidupan.",
   },
   {
-    icon: "medical-icon:i-immunizations",
-    title: "Vaksinasi Dewasa",
+    icon: "medical-icon:i-nursery",
+    title: "Postnatal Laktasi & Penyusuan Ibu",
     description:
-      "Kurangkan risiko jangkitan dan komplikasi penyakit melalui vaksinasi yang sesuai dengan keperluan anda.",
-    items: [
-      {
-        title: "Vaksin Influenza",
-        subtitle: "Perlindungan terhadap selsema bermusim dan komplikasinya.",
-        icon: "medical-icon:i-immunizations",
-      },
-      {
-        title: "Vaksin Pneumococcal",
-        subtitle: "Perlindungan daripada jangkitan paru-paru dan penyakit serius berkaitan.",
-        icon: "medical-icon:i-respiratory",
-      },
-      {
-        title: "Vaksin Typhoid",
-        subtitle: "Perlindungan daripada demam kepialu untuk individu dan pengendali makanan.",
-        icon: "medical-icon:i-infectious-diseases",
-      },
-      {
-        title: "Vaksin Hepatitis B",
-        subtitle: "Perlindungan jangka panjang terhadap jangkitan Hepatitis B.",
-        icon: "medical-icon:i-internal-medicine",
-      },
-      {
-        title: "Vaksin Meningococcal",
-        subtitle: "Disyorkan untuk jemaah umrah, haji dan individu berisiko.",
-        icon: "medical-icon:i-neurology",
-      },
-    ],
+      "Sokongan dan bimbingan penyusuan susu ibu untuk memastikan kesihatan bayi dan ibu.",
+  },
+  {
+    icon: "medical-icon:i-labor-delivery",
+    title: "Penjagaan Ibu Mengandung",
+    description:
+      "Rawatan dan pemantauan menyeluruh untuk kesihatan ibu dan bayi sepanjang kehamilan.",
+  },
+  {
+    icon: "medical-icon:i-internal-medicine",
+    title: "Masalah Haid & Hormon",
+    description:
+      "Diagnosis dan rawatan untuk masalah hormon wanita termasuk ketidakseimbangan hormon.",
   },
   {
     icon: "medical-icon:i-surgery",
-    title: "Minor Surgery & Rawatan Luka",
+    title: "Pembedahan Kecil & Prosedur",
     description:
-      "Daripada luka harian hingga penjagaan luka kronik, kami membantu proses penyembuhan dengan pemantauan yang berterusan.",
-    items: [
-      {
-        title: "Pembuangan Lipoma",
-        subtitle: "Prosedur kecil untuk membuang lipoma yang mengganggu keselesaan anda.",
-        icon: "medical-icon:i-surgery",
-      },
-      {
-        title: "Rawatan Luka Terbakar",
-        subtitle: "Dressing moden untuk membantu proses penyembuhan luka terbakar.",
-        icon: "medical-icon:i-emergency",
-      },
-      {
-        title: "Rawatan Bisul",
-        subtitle: "Rawatan bisul dengan prosedur yang sesuai untuk membantu penyembuhan.",
-        icon: "medical-icon:i-dermatology",
-      },
-      {
-        title: "Jahitan Luka",
-        subtitle: "Rawatan luka dengan jahitan atau glu mengikut kesesuaian.",
-        icon: "medical-icon:i-first-aid",
-      },
-      {
-        title: "Rawatan Luka Kronik",
-        subtitle: "Penjagaan luka diabetes untuk membantu penyembuhan dan mencegah komplikasi.",
-        icon: "medical-icon:i-diabetes-education",
-      },
-    ],
+      "Perkhidmatan pembedahan kecil dan prosedur perubatan yang selamat dan berkualiti.",
   },
+  {
+    icon: "medical-icon:i-pediatrics",
+    title: "Pediatrik & Vaksinasi",
+    description:
+      "Perkhidmatan kesihatan kanak-kanak termasuk vaksinasi dan pemeriksaan berkala.",
+  },
+  {
+    icon: "medical-icon:i-health-services",
+    title: "Saringan Kesihatan",
+    description:
+      "Pemeriksaan pencegahan dan saringan kesihatan untuk pengesanan awal penyakit.",
+  },
+];
+
+const otherServices: OtherService[] = [
+  { icon: "medical-icon:i-outpatient", title: "Rawatan Am & Akut" },
+  { icon: "medical-icon:i-medical-records", title: "Medical Checkup Pelajar / Prapekerjaan" },
+  { icon: "medical-icon:i-laboratory", title: "Ujian Darah, Air Kencing & ECG" },
+  { icon: "medical-icon:i-infectious-diseases", title: "Rawatan Denggi, COVID-19 & Influenza" },
+  { icon: "medical-icon:i-nursery", title: "Pemeriksaan Kuning Bayi (Jaundis)" },
+  { icon: "medical-icon:i-respiratory", title: "Nebuliser & Sedut Kahak" },
+  { icon: "medical-icon:i-first-aid", title: "Rawatan Cuci Luka" },
+  { icon: "medical-icon:i-immunizations", title: "Suntikan Vaksin Dewasa dan Kanak-kanak" },
+  { icon: "medical-icon:i-mental-health", title: "Kesihatan Mental & Kaunseling" },
+  { icon: "medical-icon:i-dermatology", title: "Pembedahan Ketuat dan Ketumbuhan Kulit" },
+  { icon: "medical-icon:i-pediatrics", title: "Khatan Kanak-kanak" },
+  { icon: "medical-icon:i-surgery", title: "Khatan Dewasa (Adult Circumcision)" },
+  { icon: "medical-icon:i-physical-therapy", title: "Suntikan Sendi (Intraarticular Injection)" },
 ];
 
 export function Services() {
@@ -163,85 +101,57 @@ export function Services() {
           </p>
         </div>
 
-        <div className="mt-14 space-y-14 sm:mt-16 sm:space-y-16">
-          {categories.map(({ icon, title, description, items }) => (
-            <div key={title}>
-              <div className="mx-auto flex max-w-2xl flex-col items-center text-center">
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-sm">
-                  <Icon icon={icon} className="h-6 w-6" />
-                </span>
-                <h3 className="mt-4 text-xl font-bold text-foreground sm:text-2xl">
-                  {title}
-                </h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {description}
-                </p>
-              </div>
+        {/* Kepakaran Kami */}
+        <div className="mt-14 sm:mt-16">
+          <h3 className="text-center text-xl font-bold text-foreground sm:text-2xl">
+            Kepakaran Kami
+          </h3>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 sm:mt-10">
+            {expertise.map(({ icon, title, description }) => (
+              <Card
+                key={title}
+                className="group h-full border-border bg-white p-0 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-md"
+              >
+                <CardContent className="flex h-full flex-col items-center p-6 text-center">
+                  <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary text-primary shadow-sm ring-1 ring-primary/10 transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                    <Icon icon={icon} className="h-7 w-7" />
+                  </span>
+                  <p className="mt-4 text-base font-semibold leading-snug text-foreground">
+                    {title}
+                  </p>
+                  <p className="mt-2 text-sm leading-snug text-muted-foreground">
+                    {description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
 
-              <ItemsCarousel icon={icon} items={items} />
-            </div>
-          ))}
+        {/* Lain-lain Perkhidmatan Kami */}
+        <div className="mt-14 sm:mt-16">
+          <h3 className="text-center text-xl font-bold text-foreground sm:text-2xl">
+            Lain-lain Perkhidmatan Kami
+          </h3>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:mt-10">
+            {otherServices.map(({ icon, title }) => (
+              <Card
+                key={title}
+                className="group border-border bg-white p-0 shadow-sm transition-all hover:border-primary/30 hover:shadow-md"
+              >
+                <CardContent className="flex items-center gap-4 p-4">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary ring-1 ring-primary/10 transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                    <Icon icon={icon} className="h-6 w-6" />
+                  </span>
+                  <p className="text-sm font-semibold leading-snug text-foreground">
+                    {title}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function ItemsCarousel({ icon, items }: { icon: string; items: Item[] }) {
-  const scrollerRef = React.useRef<HTMLDivElement>(null);
-
-  const scrollByDir = (dir: 1 | -1) => {
-    const el = scrollerRef.current;
-    if (!el) return;
-    el.scrollBy({ left: dir * el.clientWidth * 0.85, behavior: "smooth" });
-  };
-
-  return (
-    <div className="relative mt-7 sm:mt-9">
-      <div
-        ref={scrollerRef}
-        className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:snap-none sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-3 xl:grid-cols-4"
-      >
-        {items.map(({ title: itemTitle, subtitle, icon: itemIcon }) => (
-          <Card
-            key={itemTitle}
-            className="group shrink-0 basis-[calc(50%-0.5rem)] snap-start overflow-hidden border-border bg-white p-0 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-md sm:shrink sm:basis-auto"
-          >
-            <CardContent className="flex h-full flex-col p-0">
-              <div className="flex items-center justify-center bg-gradient-to-br from-secondary via-white to-secondary py-8">
-                <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-primary shadow-sm ring-1 ring-primary/10 transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                  <Icon icon={itemIcon ?? icon} className="h-8 w-8" />
-                </span>
-              </div>
-              <div className="flex flex-1 flex-col bg-primary px-4 py-4 text-primary-foreground">
-                <p className="text-base font-semibold leading-snug sm:text-sm">
-                  {itemTitle}
-                </p>
-                <p className="mt-1 text-sm leading-snug text-primary-foreground/80 sm:text-xs">
-                  {subtitle}
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-
-      <button
-        type="button"
-        onClick={() => scrollByDir(-1)}
-        aria-label="Sebelumnya"
-        className="absolute left-1 top-[40%] flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 text-primary shadow-md ring-1 ring-border backdrop-blur transition-colors hover:bg-white active:scale-95 sm:hidden"
-      >
-        <ChevronLeft className="h-5 w-5" />
-      </button>
-      <button
-        type="button"
-        onClick={() => scrollByDir(1)}
-        aria-label="Seterusnya"
-        className="absolute right-1 top-[40%] flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 text-primary shadow-md ring-1 ring-border backdrop-blur transition-colors hover:bg-white active:scale-95 sm:hidden"
-      >
-        <ChevronRight className="h-5 w-5" />
-      </button>
-    </div>
   );
 }
